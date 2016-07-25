@@ -18,7 +18,7 @@ trait Search
      */
     public function scopeSearch($query)
     {
-        if (Input::has('q') && count($this->searchColumns)) {
+        if (Input::has('q')) {
             $q = Input::get('q');
             $model = $this;
             $query->where(function ($query2) use ($q, $model) {
